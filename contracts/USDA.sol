@@ -328,7 +328,7 @@ contract USDA is OwnableUpgradeable, PausableUpgradeable, ERC20Upgradeable {
     }
 
     function claim() external whenNotPaused {
-		dividendTracker.processAccount(msg.sender, false);
+		dividendTracker.processAccount(_msgSender(), false);
     }
 
     /* ========== BOT BLOCKING HANDLER ========== */
