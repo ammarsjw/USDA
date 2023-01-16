@@ -12,7 +12,7 @@ async function verify(address, constructorArguments) {
 
 async function main() {
   const PioneerNFT = await ethers.getContractFactory(
-    "PioneerNFT"
+    "USDA"
   );
   console.log("Deploying PioneerNFT...");
   const contract = await upgrades.deployProxy(PioneerNFT, [], {

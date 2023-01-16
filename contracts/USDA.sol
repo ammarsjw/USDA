@@ -92,9 +92,6 @@ contract USDA is OwnableUpgradeable, PausableUpgradeable, ERC20Upgradeable {
 
     // initialize
 
-    // TODO initialize dividend tracker seperately
-    // TODO transfer ownership to USDA within it
-    // TODO call exclude from dividends seperately
     function initialize() public initializer {
         __Ownable_init();
         __Pausable_init();
@@ -102,7 +99,7 @@ contract USDA is OwnableUpgradeable, PausableUpgradeable, ERC20Upgradeable {
 
         dividendTracker = new USDADividendTracker();
 
-        // dividendTracker.initialize(address(this));
+        dividendTracker.initialize(address(this));
 
         // TODO mainnet
         // uniswapV2Router = IUniswapV2Router02();
@@ -437,9 +434,10 @@ contract USDADividendTracker is OwnableUpgradeable, PausableUpgradeable, Dividen
     event Claim(address indexed account, uint256 amount, bool indexed automatic);
 
     function initialize(address USDA_) public initializer {
-        __Ownable_init();
+        _transferOwnership(USDA_);
         __Pausable_init();
         __DividendPayingToken_init("USDA_Dividend_Tracker", "USDA_Dividend_Tracker", USDA_);
+
         claimWait = 1;
         minimumTokenBalanceForDividends = 1;
     }

@@ -32,17 +32,14 @@ pragma solidity ^0.8.0;
  * @dev Math operations for int256 with overflow safety checks.
  */
 library SafeMathInt {
-    int256 private constant MIN_INT256 = int256(1) << 255;
-    int256 private constant MAX_INT256 = ~(int256(1) << 255);
-
     /**
      * @dev Multiplies two int256 variables and fails on overflow.
      */
     function mul(int256 a, int256 b) internal pure returns (int256) {
         int256 c = a * b;
 
-        // Detect overflow when multiplying MIN_INT256 with -1
-        require(c != MIN_INT256 || (a & MIN_INT256) != (b & MIN_INT256));
+        // Detect overflow when multiplying (int256(1) << 255) with -1
+        require(c != (int256(1) << 255) || (a & (int256(1) << 255)) != (b & (int256(1) << 255)));
         require((b == 0) || (c / b == a));
         return c;
     }
@@ -51,8 +48,8 @@ library SafeMathInt {
      * @dev Division of two int256 variables and fails on overflow.
      */
     function div(int256 a, int256 b) internal pure returns (int256) {
-        // Prevent overflow when dividing MIN_INT256 by -1
-        require(b != -1 || a != MIN_INT256);
+        // Prevent overflow when dividing (int256(1) << 255) by -1
+        require(b != -1 || a != (int256(1) << 255));
 
         // Solidity already throws when dividing by 0.
         return a / b;
@@ -80,7 +77,7 @@ library SafeMathInt {
      * @dev Converts to absolute value, and fails on overflow.
      */
     function abs(int256 a) internal pure returns (int256) {
-        require(a != MIN_INT256);
+        require(a != (int256(1) << 255));
         return a < 0 ? -a : a;
     }
 

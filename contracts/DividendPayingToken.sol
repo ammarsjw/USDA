@@ -64,7 +64,7 @@ contract DividendPayingToken is OwnableUpgradeable, ERC20Upgradeable, DividendPa
     using SafeMathUint for uint256;
     using SafeMathUpgradeable for uint256;
 
-    address private _USDA;
+    address internal _USDA;
 
     // With `magnitude`, we can properly distribute dividends even if the amount of received ether is small.
     // For more discussion about choosing the value of `magnitude`,
@@ -93,7 +93,7 @@ contract DividendPayingToken is OwnableUpgradeable, ERC20Upgradeable, DividendPa
         string memory name_,
         string memory symbol_,
         address USDA_
-    ) internal initializer {
+    ) internal {
         __Ownable_init();
         __ERC20_init(name_, symbol_, 6);
         _USDA = USDA_;
