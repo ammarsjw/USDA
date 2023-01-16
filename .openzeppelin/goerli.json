@@ -1,0 +1,573 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xEC73F26c38e8B42738f771b185c340d70e81AF0A",
+    "txHash": "0x25c99a808652b58179bc67e1d92e9b7e025c27a3d3147c5b336584ed43347c2e"
+  },
+  "proxies": [
+    {
+      "address": "0x78873F62D3b6e54F9E91BFDd84493Ae386CAeA83",
+      "txHash": "0xe8ff9987a96ba9891a7d52d4b335461c33201f924535828ceab12bc2a58d62df",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x7D26DE1c0dc2bdd2b4e1f3Ba9b98b73a8CC40F25",
+      "txHash": "0x2a275aef290c08f4a82ddf0b70af4de9ac46c13e4a8b199100d1ad0ebd4866a5",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "b7015fdfcf9ef4a1481a8fbb5e0345bd2b256891268f92c604b9b21ecf998bab": {
+      "address": "0x31476cb8F454446684cf917F0cCf87ba49D61a89",
+      "txHash": "0x0a824b0adbd5e3754769caa06ea1fd4efc58d52a41b9487e8670bb566024dc28",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "contracts\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "contracts\\Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "contracts\\ContextUpgradeable.sol:39"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "contracts\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "contracts\\OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "_paused",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_bool",
+            "contract": "PausableUpgradeable",
+            "src": "contracts\\PausableUpgradeable.sol:29"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "PausableUpgradeable",
+            "src": "contracts\\PausableUpgradeable.sol:116"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:38"
+          },
+          {
+            "label": "_allowances",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:40"
+          },
+          {
+            "label": "_totalSupply",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_uint256",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:42"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:44"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:45"
+          },
+          {
+            "label": "_decimals",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_uint8",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:46"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_array(t_uint256)45_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:403"
+          },
+          {
+            "label": "dividendTracker",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_contract(USDADividendTracker)5157",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:20"
+          },
+          {
+            "label": "uniswapV2Router",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_contract(IUniswapV2Router02)1992",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:22"
+          },
+          {
+            "label": "botBlockingTime",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:24"
+          },
+          {
+            "label": "maxTransactionLimit",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:26"
+          },
+          {
+            "label": "maxWalletHolding",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:27"
+          },
+          {
+            "label": "buyIncentivePercentage",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:29"
+          },
+          {
+            "label": "gasForProcessing",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:31"
+          },
+          {
+            "label": "_isExcludedFromLimit",
+            "offset": 0,
+            "slot": "209",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:36"
+          },
+          {
+            "label": "_isBlacklisted",
+            "offset": 0,
+            "slot": "210",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:39"
+          },
+          {
+            "label": "_isIncludedInBotBlocking",
+            "offset": 0,
+            "slot": "211",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:42"
+          },
+          {
+            "label": "getBotBlockings",
+            "offset": 0,
+            "slot": "212",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:45"
+          },
+          {
+            "label": "automatedMarketMakerPairs",
+            "offset": 0,
+            "slot": "213",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:48"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)45_storage": {
+            "label": "uint256[45]",
+            "numberOfBytes": "1440"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IUniswapV2Router02)1992": {
+            "label": "contract IUniswapV2Router02",
+            "numberOfBytes": "20"
+          },
+          "t_contract(USDADividendTracker)5157": {
+            "label": "contract USDADividendTracker",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "87476c37b6cbe022fa6ab3c2ece2bc66d1c9148ebc0a57effdce8cde3bc19b86": {
+      "address": "0xa49C46984D832d4314336579291f5e624E2c0753",
+      "txHash": "0x0ab46e39a0d4d280acae24644ed5ba5b8d7cc2fd73c046c22463797726052b65",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "contracts\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "contracts\\Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "contracts\\ContextUpgradeable.sol:39"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "contracts\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "contracts\\OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "_paused",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_bool",
+            "contract": "PausableUpgradeable",
+            "src": "contracts\\PausableUpgradeable.sol:29"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "PausableUpgradeable",
+            "src": "contracts\\PausableUpgradeable.sol:116"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:38"
+          },
+          {
+            "label": "_allowances",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:40"
+          },
+          {
+            "label": "_totalSupply",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_uint256",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:42"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:44"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:45"
+          },
+          {
+            "label": "_decimals",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_uint8",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:46"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_array(t_uint256)45_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "contracts\\ERC20Upgradeable.sol:403"
+          },
+          {
+            "label": "dividendTracker",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_contract(USDADividendTracker)5189",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:20"
+          },
+          {
+            "label": "uniswapV2Router",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_contract(IUniswapV2Router02)1992",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:22"
+          },
+          {
+            "label": "botBlockingTime",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:24"
+          },
+          {
+            "label": "maxTransactionLimit",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:26"
+          },
+          {
+            "label": "maxWalletHolding",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:27"
+          },
+          {
+            "label": "buyIncentivePercentage",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:29"
+          },
+          {
+            "label": "isAutoProcess",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_bool",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:31"
+          },
+          {
+            "label": "gasForProcessing",
+            "offset": 0,
+            "slot": "209",
+            "type": "t_uint256",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:32"
+          },
+          {
+            "label": "_isExcludedFromLimit",
+            "offset": 0,
+            "slot": "210",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:37"
+          },
+          {
+            "label": "_isBlacklisted",
+            "offset": 0,
+            "slot": "211",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:40"
+          },
+          {
+            "label": "_isIncludedInBotBlocking",
+            "offset": 0,
+            "slot": "212",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:43"
+          },
+          {
+            "label": "getBotBlockings",
+            "offset": 0,
+            "slot": "213",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:46"
+          },
+          {
+            "label": "automatedMarketMakerPairs",
+            "offset": 0,
+            "slot": "214",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "USDA",
+            "src": "contracts\\USDA.sol:49"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)45_storage": {
+            "label": "uint256[45]",
+            "numberOfBytes": "1440"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IUniswapV2Router02)1992": {
+            "label": "contract IUniswapV2Router02",
+            "numberOfBytes": "20"
+          },
+          "t_contract(USDADividendTracker)5189": {
+            "label": "contract USDADividendTracker",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

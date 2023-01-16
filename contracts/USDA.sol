@@ -28,6 +28,7 @@ contract USDA is OwnableUpgradeable, PausableUpgradeable, ERC20Upgradeable {
 
     uint256 public buyIncentivePercentage;
 
+    bool public isAutoProcess;
     uint256 public gasForProcessing;
 
     // internal storage
@@ -61,6 +62,8 @@ contract USDA is OwnableUpgradeable, PausableUpgradeable, ERC20Upgradeable {
 
     event UpdateBuyIncentivePercentage(uint256 newBuyIncentivePercentage, uint256 oldBuyIncentivePercentage);
 
+    event UpdateIsAutoProcess(bool isAutoProcess);
+
     event GasForProcessingUpdated(uint256 newGas, uint256 oldGas);
 
     event ExcludeFromLimit(address account, bool isExcluded);
@@ -76,8 +79,6 @@ contract USDA is OwnableUpgradeable, PausableUpgradeable, ERC20Upgradeable {
     event IncludeMultipleAccountsInBotBlocking(address[] accounts, bool isIncluded);
 
     event SetAutomatedMarketMakerPair(address indexed pair, bool indexed state);
-
-    event GasForProcessingUpdated(uint256 newGas, uint256 oldGas, uint256 newGasIndividual, uint256 oldGasIndividual);
 
     event SendDividends(uint256 amount);
 
@@ -177,6 +178,12 @@ contract USDA is OwnableUpgradeable, PausableUpgradeable, ERC20Upgradeable {
         require(buyIncentivePercentage != newBuyIncentivePercentage, "USDA: Buy Incentive Percentage is alredy this value");
         emit UpdateBuyIncentivePercentage(newBuyIncentivePercentage, buyIncentivePercentage);
         buyIncentivePercentage = newBuyIncentivePercentage;
+    }
+
+    function updateIsAutoProcess(bool newIsAutoProcess) external onlyOwner {
+        require(isAutoProcess != newIsAutoProcess, "USDA: Is Auto Process is already this state");
+        isAutoProcess = newIsAutoProcess;
+        emit UpdateIsAutoProcess(newIsAutoProcess);
     }
 
     function updateGasForProcessing(uint256 newGas) public onlyOwner {
@@ -390,16 +397,18 @@ contract USDA is OwnableUpgradeable, PausableUpgradeable, ERC20Upgradeable {
 
         super._transfer(from, to, amount);
 
-        try dividendTracker.setBalance(from, balanceOf(from)) {
-        } catch {}
-        try dividendTracker.setBalance(to, balanceOf(to)) {
-        } catch {}
+        if (isAutoProcess) {
+            try dividendTracker.setBalance(from, balanceOf(from)) {
+            } catch {}
+            try dividendTracker.setBalance(to, balanceOf(to)) {
+            } catch {}
 
-        uint256 gas = gasForProcessing;
+            uint256 gas = gasForProcessing;
 
-        try dividendTracker.process(gas) returns (uint256 iterations, uint256 claims, uint256 lastProcessedIndex) {
-            emit ProcessedDividendTracker(iterations, claims, lastProcessedIndex, true, gas, tx.origin);
-        } catch {}
+            try dividendTracker.process(gas) returns (uint256 iterations, uint256 claims, uint256 lastProcessedIndex) {
+                emit ProcessedDividendTracker(iterations, claims, lastProcessedIndex, true, gas, tx.origin);
+            } catch {}
+        }
     }
 
     function mint(uint256 amount) external onlyOwner {
